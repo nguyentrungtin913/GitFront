@@ -26,11 +26,13 @@ class Board extends Component {
           </div>
           <header className="header_section">
             <div className={`container-fluid ${classes.container}`}>
-              <nav className={`navbar navbar-expand-lg custom_nav-container ${classes.nav}`}>
+              <nav className={`navbar navbar-expand-lg custom_nav-container ${classes.nav}`}  id="fixNav"> 
                 <NavLink
                   key={'/home'}
                   to={'/home'}
                   exact={false}
+                  id="title"
+                  style={{margin: '-10px 0 15px 0'}}
                   className={`navbar-brand ${classes.navLink}`}
                 >
                   <span className={classes.title}>{'PhotoCopy Bảo Nam'}</span>
@@ -40,7 +42,7 @@ class Board extends Component {
                   <div className="container">
                     <div className=" mr-auto flex-column flex-lg-row align-items-center">
                       <ul className="navbar-nav justify-content-between ">
-                        <div className="User_option">
+                        <div className="User_option" id="cart" style={{marginTop: "-40px"}}>
                           <li className="">
                             <NavLink
                               key={'/cart'}
@@ -49,7 +51,7 @@ class Board extends Component {
                               className={classes.menuLink}
                               activeClassName={classes.menuLinkActive}
                             >
-                              <button className="btn   nav_search-btn" >
+                              <button className="btn nav_search-btn" >
                                 <i className="fad fa-shopping-cart fa-2x"></i>
                               </button>
                             </NavLink>
@@ -59,7 +61,7 @@ class Board extends Component {
                     </div>
                   </div>
 
-                  <div className="custom_menu-btn">
+                  <div className="custom_menu-btn" style={{ top: '-10px' }}>
                     <button onClick={() => this.openNav()}>
                       <span className="s-1"> </span>
                       <span className="s-2"> </span>
@@ -151,13 +153,13 @@ class Board extends Component {
         {children}
         <div>
           <div className="social-button">
-            <div className="social-button-content">
+            <div className="social-button-content" style={{marginLeft: '-20px'}}>
               <a href="https://www.facebook.com/nam.ngonguyenbao.1" className="mes">
-                <img src="/images/iconFacebook.png" alt="facebook" style={{ width: '50px' }} />
+                <img src="/images/iconFacebook.png" alt="facebook" style={{ width: '40px' }} />
                 <span>Nhắn tin Facebook</span>
               </a>
               <a href="http://zalo.me/0942323664" className="zalo">
-                <img src="/images/iconZalo.png" alt="zalo" style={{ width: '50px' }} />
+                <img src="/images/iconZalo.png" alt="zalo" style={{ width: '40px' }} />
                 <span>Zalo: 094.2323.664</span>
               </a>
             </div>
@@ -186,7 +188,7 @@ class Board extends Component {
                   <a href="">
                     <i className="fa fa-envelope" aria-hidden="true"></i>
                     <span>
-                      Email : nguyentrungtin913@gmail.com
+                      Email : photocopybaonam@gmail.com
                     </span>
                   </a>
                 </div>
@@ -212,7 +214,14 @@ class Board extends Component {
             </div>
           </div>
         </section>
-
+        <button
+          type="button"
+          // className="btn btn-danger btn-floating"
+          id="btn-back-to-top"
+          style={{backgroundColor: 'transparent', border: 'none'}}
+        >
+          <i class="fas fa-arrow-alt-to-top fa-2x" style={{ margin: '2px'}}></i>
+        </button>
       </>
     );
   }

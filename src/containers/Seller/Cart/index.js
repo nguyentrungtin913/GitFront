@@ -94,47 +94,47 @@ class Cart extends Component {
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
       >
-        <form onSubmit={this.onSave} >
-          <DialogTitle >
-            <h1>Thông tin khách hàng</h1>
-          </DialogTitle>
-          <DialogContent>
-            <h2 className={`${classes.label}`}>Họ Tên</h2>
-            <input
-              type="text"
-              name='name'
-              className={`form-control ${classes.textBox}`}
-              value={name}
-              onChange={this.onChange}
-              required="required"
-            />
-            <h2 className={`${classes.label}`}>Số điện thoại</h2>
-            <input
-              type="text"
-              name="phone"
-              className={`form-control ${classes.textBox}`}
-              value={phone}
-              onChange={this.onChange}
-              required="required"
-            />
-            <h2 className={`${classes.label}`}>Số lượng mặt hàng</h2>
-            <input
-              type="text"
-              className={`form-control ${classes.textBox}`}
-              value={listCart.length}
-            />
-            <h2 className={`${classes.label}`}>Tổng tiền</h2>
-            <input
-              type="text"
-              className={`form-control ${classes.textBox}`}
-              value={total}
-            />
-          </DialogContent>
-          <DialogActions>
-            <button onClick={this.handleClose} className={`btn btn-lg btn-warning ${classes.button}`}>Hủy</button>
-            <button type="submit" className={`btn btn-lg btn-success ${classes.button}`}>Mua</button>
-          </DialogActions>
-        </form>
+          <form onSubmit={this.onSave} >
+            <DialogTitle >
+              <h1>Thông tin khách hàng</h1>
+            </DialogTitle>
+            <DialogContent>
+              <h2 className={`${classes.label}`}>Họ Tên</h2>
+              <input
+                type="text"
+                name='name'
+                className={`form-control ${classes.textBox}`}
+                value={name}
+                onChange={this.onChange}
+                required="required"
+              />
+              <h2 className={`${classes.label}`}>Số điện thoại</h2>
+              <input
+                type="text"
+                name="phone"
+                className={`form-control ${classes.textBox}`}
+                value={phone}
+                onChange={this.onChange}
+                required="required"
+              />
+              <h2 className={`${classes.label}`}>Số lượng mặt hàng</h2>
+              <input
+                type="text"
+                className={`form-control ${classes.textBox}`}
+                value={listCart.length}
+              />
+              <h2 className={`${classes.label}`}>Tổng tiền</h2>
+              <input
+                type="text"
+                className={`form-control ${classes.textBox}`}
+                value={total}
+              />
+            </DialogContent>
+            <DialogActions>
+              <button type="button" onClick={this.handleClose} className={`btn btn-lg btn-warning ${classes.button}`}>Hủy</button>
+              <button type="submit" className={`btn btn-lg btn-success ${classes.button}`}>Mua</button>
+            </DialogActions>
+          </form>
       </Dialog>
 
     )

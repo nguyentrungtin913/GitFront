@@ -10,7 +10,8 @@ const styles = () => ({
     marginTop: '10px',
     height: '35px',
     width: '300px',
-    fontSize: '18pt'
+    fontSize: '18pt',
+    maxWidth: '100%'
   },
   button:{
     fontSize: '13pt'
