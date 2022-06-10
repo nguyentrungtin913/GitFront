@@ -2,7 +2,7 @@
   "name": "learning-redux-saga-material-ui-redux-form",
   "version": "0.1.0",
   "engines": {
-    "node": "16.x"
+    "node": "11.x"
   },
   "private": true,
   "dependencies": {
