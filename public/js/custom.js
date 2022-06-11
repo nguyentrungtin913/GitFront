@@ -21,6 +21,7 @@ function openNav() {
       mybutton.style.display = "block";
       title.style.display = "none";
       nav.style.backgroundColor = "#b9d3d3";
+      nav.style.opa = "#b9d3d3";
       nav.style.boxShadow = "0px 2px 2px rgba(0,0,0,0.5)";
       cart.style.marginTop = "0";
     } else {

@@ -5,7 +5,6 @@ const styles = () => ({
   text: {
     left: '5%',
     position: 'absolute',
-    marginTop: '9%',
     fontWeight: 600,
   }
 });

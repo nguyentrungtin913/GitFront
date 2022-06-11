@@ -26,13 +26,13 @@ class Board extends Component {
           </div>
           <header className="header_section">
             <div className={`container-fluid ${classes.container}`}>
-              <nav className={`navbar navbar-expand-lg custom_nav-container ${classes.nav}`}  id="fixNav"> 
+              <nav className={`navbar navbar-expand-lg custom_nav-container ${classes.nav}`} id="fixNav">
                 <NavLink
                   key={'/home'}
                   to={'/home'}
                   exact={false}
                   id="title"
-                  style={{margin: '-10px 0 15px 0'}}
+                  style={{ margin: '-10px 0 15px 0' }}
                   className={`navbar-brand ${classes.navLink}`}
                 >
                   <span className={classes.title}>{'PhotoCopy Bảo Nam'}</span>
@@ -42,7 +42,7 @@ class Board extends Component {
                   <div className="container">
                     <div className=" mr-auto flex-column flex-lg-row align-items-center">
                       <ul className="navbar-nav justify-content-between ">
-                        <div className="User_option" id="cart" style={{marginTop: "-40px"}}>
+                        <div className="User_option" id="cart" style={{ marginTop: "-40px" }}>
                           <li className="">
                             <NavLink
                               key={'/cart'}
@@ -153,7 +153,7 @@ class Board extends Component {
         {children}
         <div>
           <div className="social-button">
-            <div className="social-button-content" style={{marginLeft: '-20px'}}>
+            <div className="social-button-content" style={{ marginLeft: '-20px' }}>
               <a href="https://www.facebook.com/nam.ngonguyenbao.1" className="mes">
                 <img src="/images/iconFacebook.png" alt="facebook" style={{ width: '40px' }} />
                 <span>Nhắn tin Facebook</span>
@@ -198,7 +198,7 @@ class Board extends Component {
                   <div className="map_container">
                     <div className="map">
                       <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d583.3049358612583!2d105.37392038674413!3d10.422190208548916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1svi!2s!4v1636164639662!5m2!1svi!2s"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2716.262230504435!2d105.37389748621715!3d10.420186611705928!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x6c08ea7797a70826!2sVPP-Photo%20B%E1%BA%A3o%20Nam!5e0!3m2!1svi!2s!4v1654923718861!5m2!1svi!2s"
                         width="100%"
                         height="400"
                         style={{ border: 0 }}
@@ -218,9 +218,9 @@ class Board extends Component {
           type="button"
           // className="btn btn-danger btn-floating"
           id="btn-back-to-top"
-          style={{backgroundColor: 'transparent', border: 'none'}}
+          style={{ backgroundColor: 'transparent', border: 'none' }}
         >
-          <i class="fas fa-arrow-alt-to-top fa-2x" style={{ margin: '2px'}}></i>
+          <i class="fas fa-arrow-alt-to-top fa-2x" style={{ margin: '2px' }}></i>
         </button>
       </>
     );
