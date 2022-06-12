@@ -20,14 +20,14 @@ function openNav() {
     ) {
       mybutton.style.display = "block";
       title.style.display = "none";
-      nav.style.backgroundColor = "#b9d3d3";
+      nav.style.background = "linear-gradient(to right, rgb(107 198 198), rgb(29, 150, 147), rgb(7 67 66))";
       nav.style.opa = "#b9d3d3";
       nav.style.boxShadow = "0px 2px 2px rgba(0,0,0,0.5)";
       cart.style.marginTop = "0";
     } else {
       mybutton.style.display = "none";
       title.style.display = "block";
-      nav.style.backgroundColor = "transparent";
+      nav.style.background = "";
       nav.style.boxShadow = "none";
       cart.style.marginTop = "-40px";
     }
