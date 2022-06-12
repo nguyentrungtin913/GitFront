@@ -8,7 +8,7 @@ import { HEIGHT } from './constants';
 // document.body.style.overflowX = "hidden";
 
 // document.body.style.width = WIDTH + "px";
-document.body.style.fontFamily = 'fantasy';
+// document.body.style.fontFamily = 'fantasy';
 
 document.body.style.height = HEIGHT + "px";
 ReactDOM.render(<App />, document.getElementById("root"));

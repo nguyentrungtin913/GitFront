@@ -22,7 +22,10 @@ const styles = () => ({
     marginLeft: '86%',
   },
   myPanelActionProduct:{
-    height: '575px'
+    height: '638px'
+  },
+  require: {
+    color: 'red'
   }
 });
 

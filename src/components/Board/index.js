@@ -173,7 +173,7 @@ class Board extends Component {
                   Liên hệ chúng tôi
                 </h4>
                 <div className="contact_nav">
-                  <a href="https://goo.gl/maps/61iU8gd7S7uQ3HYYA">
+                  <a href="https://www.google.com/maps/place/VPP-Photo+B%E1%BA%A3o+Nam/@10.4220607,105.3739718,18.7z/data=!4m5!3m4!1s0x0:0x6c08ea7797a70826!8m2!3d10.4217276!4d105.3739035">
                     <i className="fa fa-map-marker" aria-hidden="true"></i>
                     <span>
                       Vị trí

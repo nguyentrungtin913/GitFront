@@ -21,7 +21,8 @@ class ProductActionPage extends Component {
       amountSell: 0,
       note: "",
       type: "",
-      path: ""
+      path: "",
+      extra: 0
     };
   }
 
@@ -42,6 +43,7 @@ class ProductActionPage extends Component {
         amountSell: productEditting.amountSell,
         note: productEditting.note,
         type: productEditting.type,
+        extra: productEditting.extra,
       });
     }
   }
@@ -107,7 +109,8 @@ class ProductActionPage extends Component {
       amount,
       amountSell,
       note,
-      type
+      type,
+      extra
     } = this.state;
     const { productActionCreators } = this.props;
     const { addProduct, updateProduct } = productActionCreators;
@@ -123,7 +126,8 @@ class ProductActionPage extends Component {
         amount: amount,
         amountSell: amountSell,
         note: note,
-        type: type
+        type: type,
+        extra
       }
       updateProduct(product);
     } else {
@@ -135,7 +139,8 @@ class ProductActionPage extends Component {
         amount: amount,
         amountSell: amountSell,
         note: note,
-        type: type
+        type: type,
+        extra
       };
       addProduct(product);
     }
@@ -184,7 +189,8 @@ class ProductActionPage extends Component {
       amount,
       amountSell,
       note,
-      path
+      path,
+      extra
     } = this.state;
     return (
       <form onSubmit={this.onSave}>
@@ -195,7 +201,7 @@ class ProductActionPage extends Component {
           <div className="panel-body">
             <div className={`${classes.formProduct}`}>
               <div>
-                <h3 className="form-label">Tên sản phẩm</h3>
+                <h3 className="form-label">Tên sản phẩm <span className={classes.require}>*</span></h3>
                 <input
                   type="text"
                   className={`form-control ${classes.text} `}
@@ -207,7 +213,7 @@ class ProductActionPage extends Component {
               </div>
 
               <div>
-                <h3 className="form-label">Loại sản phẩm</h3>
+                <h3 className="form-label">Loại sản phẩm <span className={classes.require}>*</span></h3>
                 <select
                   className={`form-control ${classes.text} `}
                   value={type}
@@ -221,7 +227,7 @@ class ProductActionPage extends Component {
               </div>
 
               <div>
-                <h3 className="form-label">Giá nhập</h3>
+                <h3 className="form-label">Giá nhập <span className={classes.require}>*</span></h3>
                 <input
                   type="number"
                   className={`form-control ${classes.text} `}
@@ -235,7 +241,7 @@ class ProductActionPage extends Component {
               </div>
 
               <div>
-                <h3 className="form-label">Giá bán</h3>
+                <h3 className="form-label">Giá bán <span className={classes.require}>*</span></h3>
                 <input
                   type="number"
                   className={`form-control ${classes.text} `}
@@ -249,7 +255,7 @@ class ProductActionPage extends Component {
               </div>
 
               <div>
-                <h3 className="form-label">Số lượng hiện tại</h3>
+                <h3 className="form-label">Số lượng hiện tại <span className={classes.require}>*</span></h3>
                 <input
                   type="number"
                   className={`form-control ${classes.text} `}
@@ -262,7 +268,7 @@ class ProductActionPage extends Component {
               </div>
 
               <div>
-                <h3 className="form-label">Số lượng đã bán</h3>
+                <h3 className="form-label">Số lượng đã bán <span className={classes.require}>*</span></h3>
                 <input
                   type="number"
                   className={`form-control ${classes.text} `}
@@ -272,6 +278,20 @@ class ProductActionPage extends Component {
                   min="0"
                   required
                 />
+              </div>
+              <div>
+                <h3 className="form-label">Thêm</h3>
+                <select  
+                  className={`form-control ${classes.text} `}
+                  value={extra}
+                  name="extra"
+                  onChange={this.onChange}
+                  min="0">
+                    <option>--Chọn--</option>
+                    <option value={1}>Sản phẩm mới</option>
+                    <option value={2}>Sản phẩm HOT</option>
+                </select>
+               
               </div>
 
               <div>

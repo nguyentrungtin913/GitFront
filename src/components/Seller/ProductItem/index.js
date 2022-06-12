@@ -13,9 +13,18 @@ class ProductItem extends Component {
 
   render() {
     let { product, classes } = this.props;
+    let extra = "";
+    if (product.extra === 1) {
+      extra = "/images/new.png";
+    } else if (product.extra === 2) {
+      extra = "/images/hot.webp";
+    }
+
     let priceExport = new Intl.NumberFormat("de-DE").format(
       product.priceExport
     );
+
+
     return (
       <div className="col-md-6 col-lg-4">
         <div className={`box ${classes.borderBox}`} >
@@ -23,6 +32,11 @@ class ProductItem extends Component {
             <LazyLoadImage
               className={classes.imageProduct}
               src={`${API_URL}/image/${product.image}`}
+              alt="" />
+            <LazyLoadImage
+              className={{}}
+              style={{ position: "absolute", width: "100px", top: "7%", right: "20%" }}
+              src={extra}
               alt="" />
           </div>
           <div className="detail-box">
