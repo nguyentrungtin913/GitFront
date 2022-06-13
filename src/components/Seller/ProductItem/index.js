@@ -44,7 +44,7 @@ class ProductItem extends Component {
             <button className={classes.button} onClick={() => this.onAddToCart(product.id)}><i className="fad fa-cart-arrow-down fa-3x" style={{ color: 'rgb(13 49 151)' }}></i></button>
             <div className="price_box">
               <h3 className="price_heading">
-                {priceExport}
+                {priceExport}<sup>đ</sup>
               </h3>
             </div>
           </div>

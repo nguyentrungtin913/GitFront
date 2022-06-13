@@ -39,7 +39,7 @@ class ListAllProduct extends Component {
           <div className="container">
             <div className="heading_container heading_center" style={{ alignItems: 'self-start' }}>
               <h2>
-                Danh sách tất cả sản phẩm
+                Tìm kiếm sản phẩm
               </h2>
 
               <input

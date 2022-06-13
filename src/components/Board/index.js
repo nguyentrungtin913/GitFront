@@ -35,7 +35,7 @@ class Board extends Component {
                   style={{ margin: '-10px 0 15px 0' }}
                   className={`navbar-brand ${classes.navLink}`}
                 >
-                  <span className={classes.title}>{'PhotoCopy Bảo Nam'}</span>
+                  <span className={classes.title}>{'Photocopy Bảo Nam'}</span>
                 </NavLink>
 
                 <div className="" id="">
@@ -43,6 +43,19 @@ class Board extends Component {
                     <div className=" mr-auto flex-column flex-lg-row align-items-center">
                       <ul className="navbar-nav justify-content-between ">
                         <div className="User_option" id="cart" style={{ marginTop: "-40px" }}>
+                        <li className="" id="home" style={{display: "none"}}>
+                            <NavLink
+                              key={'/home'}
+                              to={'/home'}
+                              exact={true}
+                              className={classes.menuLink}
+                              activeClassName={classes.menuLinkActive}
+                            >
+                              <button className="btn nav_search-btn" >
+                              <i className="fas fa-home-lg-alt fa-2x"></i>
+                              </button>
+                            </NavLink>
+                          </li>
                           <li className="">
                             <NavLink
                               key={'/cart'}
@@ -53,6 +66,19 @@ class Board extends Component {
                             >
                               <button className="btn nav_search-btn" >
                                 <i className="fad fa-shopping-cart fa-2x"></i>
+                              </button>
+                            </NavLink>
+                          </li>
+                          <li className="">
+                            <NavLink
+                              key={'/search'}
+                              to={'/search'}
+                              exact={true}
+                              className={classes.menuLink}
+                              activeClassName={classes.menuLinkActive}
+                            >
+                              <button className="btn nav_search-btn" >
+                              <i className="fas fa-search fa-2x"></i>
                               </button>
                             </NavLink>
                           </li>
@@ -105,7 +131,7 @@ class Board extends Component {
               </nav>
             </div>
           </header>
-          <section className="slider_section ">
+          <section className="slider_section" style={{marginBottom: '-50px', marginTop: '60px'}}>
             <div id="customCarousel1" className="carousel slide" data-ride="carousel">
               <div className="carousel-inner">
                 <div className="carousel-item active">
@@ -174,7 +200,7 @@ class Board extends Component {
                 </h4>
                 <div className="contact_nav">
                   <a href="https://www.google.com/maps/place/VPP-Photo+B%E1%BA%A3o+Nam/@10.4220607,105.3739718,18.7z/data=!4m5!3m4!1s0x0:0x6c08ea7797a70826!8m2!3d10.4217276!4d105.3739035">
-                    <i className="fa fa-map-marker" aria-hidden="true"></i>
+                    <i className="fas fa-map-marker-alt" aria-hidden="true"></i>
                     <span>
                       Vị trí
                     </span>
@@ -220,7 +246,7 @@ class Board extends Component {
           id="btn-back-to-top"
           style={{ backgroundColor: 'transparent', border: 'none' }}
         >
-          <i class="fas fa-arrow-alt-to-top fa-2x" style={{ margin: '2px' }}></i>
+          <i className="fas fa-arrow-alt-to-top fa-2x" style={{ margin: '2px' }}></i>
         </button>
       </>
     );

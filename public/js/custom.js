@@ -13,6 +13,8 @@ function openNav() {
     let title =  document.getElementById("title");
     let nav =  document.getElementById("fixNav");
     let cart =  document.getElementById("cart");
+    let home =  document.getElementById("home");
+    cart.addEventListener("click", backToTop);
     mybutton.addEventListener("click", backToTop);
     if (
       document.body.scrollTop > 20 ||
@@ -24,12 +26,14 @@ function openNav() {
       nav.style.opa = "#b9d3d3";
       nav.style.boxShadow = "0px 2px 2px rgba(0,0,0,0.5)";
       cart.style.marginTop = "0";
+      home.style.display = "block";
     } else {
       mybutton.style.display = "none";
       title.style.display = "block";
       nav.style.background = "";
       nav.style.boxShadow = "none";
       cart.style.marginTop = "-40px";
+      home.style.display = "none";
     }
   }
   // When the user clicks on the button, scroll to the top of the document
