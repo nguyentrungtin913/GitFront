@@ -22,6 +22,8 @@ export const HEIGHT = window.innerHeight;
 export const API_ENDPOINT = "http://localhost:3000";
 // export const API_URL = "http://myproject.io";
 export const API_URL = 'https://backend-myproject.herokuapp.com';
+export const TOKEN_TELEGRAM = '5135558242:AAGd8SVCTT8r-jH6h028bwu8ghctoWt7w6c';
+export const CHAT_ID = '-1001781867334';
 
 export const STATUSES = [
   {

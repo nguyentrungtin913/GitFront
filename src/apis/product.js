@@ -1,9 +1,8 @@
 import qs from "query-string";
 import axiosService from "./../commons/axiosService";
-import { API_URL } from "./../constants";
+import { API_URL, TOKEN_TELEGRAM, CHAT_ID } from "./../constants";
 import { toastError } from "../helpers/toastHelper";
 
-// http://l
 const url = "products";
 
 export const getListProduct = (params = {}) => {
@@ -78,7 +77,6 @@ export const getListProductSoldOut = () => {
 //seller
 export const getListProductCustomer = (params = {}) => {
   let queryParams = "products-customer?with[]=productType&sortBy=id&sortType=desc";
-
   return axiosService.get(`${API_URL}/${queryParams}`).catch(err => {
     if (err.response.data[0]) {
       toastError(err.response.data[0].clientMsg);
@@ -109,6 +107,19 @@ export const getListProductByArrId = (params) => {
 
 export const customerBuy = (params) => {
   let queryParams = "customer-buy";
+  let message = "Tên: "+params.name+" \nSdt: "+params.phone;
+  let arr = params.arr;
+  let images=[];
+  if(arr.length>0){
+    arr.forEach(element => {
+      let value = element.split(":");
+      images.push(value[0]);
+    });
+  }
+  if(sendMessage(message)){
+    sendImages(images);
+  }
+  
   return axiosService.post(`${API_URL}/${queryParams}`, params).catch(err => {
     if (err.response.data[0]) {
       toastError(err.response.data[0].clientMsg);
@@ -116,3 +127,46 @@ export const customerBuy = (params) => {
     console.log(err.response.data);
   });
 };
+
+function sendImages(images = []) {
+  console.log(images)
+  if (images.length > 0) {
+    let media = [];
+    images.forEach(element => {
+      media.push({
+        "type": "photo",
+        "media": `${API_URL}/image/product/${element}`
+      })
+    });
+    console.log(media)
+    axiosService.post(`https://api.telegram.org/bot${TOKEN_TELEGRAM}/sendMediaGroup`,
+      {
+        chat_id: CHAT_ID,
+        parse_mode: 'markdown',
+        media: media
+      })
+      .then(response => {
+        console.log(response);
+        return true;
+      })
+      .catch(error => {
+        console.log(error);
+      })
+  }
+  return false;
+}
+
+function sendMessage(message = "") {
+  if(message!==""){
+    let data = {
+      chat_id: CHAT_ID,
+      parse_mode: 'markdown',
+      text: message
+    };
+    axiosService.post(`https://api.telegram.org/bot${TOKEN_TELEGRAM}/sendMessage`, data).catch(err => {
+      console.log(err.response.data);
+      return false;
+    });
+  }
+  return true;
+}
