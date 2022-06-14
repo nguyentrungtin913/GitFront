@@ -116,11 +116,16 @@ export const customerBuy = (params) => {
       images.push(value[0]);
     });
   }
-  if(sendMessage(message)){
-    sendImages(images);
-  }
   
-  return axiosService.post(`${API_URL}/${queryParams}`, params).catch(err => {
+  
+  return axiosService.post(`${API_URL}/${queryParams}`, params).then(response => {
+    if(response.data.code ==="success"){
+      if(sendMessage(message)){
+        sendImages(images);
+      }
+      return response.data;
+    }
+  }).catch(err => {
     if (err.response.data[0]) {
       toastError(err.response.data[0].clientMsg);
     }
@@ -129,7 +134,6 @@ export const customerBuy = (params) => {
 };
 
 function sendImages(images = []) {
-  console.log(images)
   if (images.length > 0) {
     let media = [];
     images.forEach(element => {
@@ -138,7 +142,6 @@ function sendImages(images = []) {
         "media": `${API_URL}/image/product/${element}`
       })
     });
-    console.log(media)
     axiosService.post(`https://api.telegram.org/bot${TOKEN_TELEGRAM}/sendMediaGroup`,
       {
         chat_id: CHAT_ID,
@@ -146,7 +149,6 @@ function sendImages(images = []) {
         media: media
       })
       .then(response => {
-        console.log(response);
         return true;
       })
       .catch(error => {
