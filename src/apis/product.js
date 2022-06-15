@@ -123,7 +123,7 @@ export const customerBuy = (params) => {
       if(sendMessage(message)){
         sendImages(images);
       }
-      // return response.data;
+      return response.data;
     }
   }).catch(err => {
     if (err.response.data[0]) {
