@@ -134,7 +134,7 @@ export const customerBuy = (params) => {
 };
 
 function sendImages(images = []) {
-  const MAX=10;
+  const MAX=9;
   if (images.length > 0) {
     let media = [];
     let medias = [];
