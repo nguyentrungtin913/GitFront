@@ -123,7 +123,7 @@ export const customerBuy = (params) => {
       if(sendMessage(message)){
         sendImages(images);
       }
-      return response.data;
+      // return response.data;
     }
   }).catch(err => {
     if (err.response.data[0]) {
@@ -134,26 +134,46 @@ export const customerBuy = (params) => {
 };
 
 function sendImages(images = []) {
+  const MAX=10;
   if (images.length > 0) {
     let media = [];
+    let medias = [];
+    let count = 0;
+    let total = 0;
     images.forEach(element => {
+      count++;
+      total++;
       media.push({
         "type": "photo",
         "media": `${API_URL}/image/product/${element}`
       })
+
+      if(count===MAX || total===images.length){
+        medias.push(media);
+        media = [];
+        count=0;
+      }
+      
     });
-    axiosService.post(`https://api.telegram.org/bot${TOKEN_TELEGRAM}/sendMediaGroup`,
-      {
-        chat_id: CHAT_ID,
-        parse_mode: 'markdown',
-        media: media
+    
+
+    if(medias.length>0){
+      medias.forEach(media => {
+        axiosService.post(`https://api.telegram.org/bot${TOKEN_TELEGRAM}/sendMediaGroup`,
+        {
+          chat_id: CHAT_ID,
+          parse_mode: 'markdown',
+          media: media
+        })
+        .then(response => {
+          // return true;
+        })
+        .catch(error => {
+          console.log(error);
+        })
       })
-      .then(response => {
-        return true;
-      })
-      .catch(error => {
-        console.log(error);
-      })
+    }
+    
   }
   return false;
 }
