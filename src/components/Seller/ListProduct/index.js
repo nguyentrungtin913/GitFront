@@ -11,10 +11,10 @@ class ListProduct extends Component {
     let { products } = this.props;
     let content = [];
     let count = 0;
-
+    
     for (let i = 0; i < products.length; i++) {
       count++;
-      if (count < 7) {
+      if (count < 7 && products[i].extra>0) {
         content.push(<ProductItem
           key={i}
           product={products[i]}
