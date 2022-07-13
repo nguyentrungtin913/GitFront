@@ -15,7 +15,11 @@ const styles = () => ({
     backgroundColor: 'transparent'
   },
   borderBox:{
-    border: 'solid thin #ededed'
+    border: 'solid thin #ededed',
+    borderRadius: '25px',
+    width: '85%',
+    margin: 'auto',
+    backgroundColor: 'white'
   }
 });
 

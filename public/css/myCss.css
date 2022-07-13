@@ -136,3 +136,17 @@
   left: 0; /*Nằm sát bên trái*/
   z-index: 10; /*Hiển thị lớp trên cùng*/
 }
+
+.detail-box{
+  text-align: left;
+}
+
+.price_box{
+  color: #1984ff;
+  font-weight: 600;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+.box-img{
+  margin-top: 15px;
+}

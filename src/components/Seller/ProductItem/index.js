@@ -13,6 +13,7 @@ class ProductItem extends Component {
 
   render() {
     let { product, classes } = this.props;
+    let note = product.note ?? '1 cái' ;
     let extra = "";
     if (product.extra === 1) {
       extra = "/images/new.png";
@@ -28,7 +29,7 @@ class ProductItem extends Component {
     return (
       <div className="col-md-6 col-lg-4">
         <div className={`box ${classes.borderBox}`} >
-          <div className="img-box">
+          <div className="box-img">
             <LazyLoadImage
               className={classes.imageProduct}
               src={`${API_URL}/image/${product.image}`}
@@ -40,12 +41,28 @@ class ProductItem extends Component {
               alt="" />
           </div>
           <div className="detail-box">
-            <h2>{product.name}</h2>
-            <button className={classes.button} onClick={() => this.onAddToCart(product.id)}><i className="fad fa-cart-arrow-down fa-3x" style={{ color: 'rgb(13 49 151)' }}></i></button>
-            <div className="price_box">
-              <h3 className="price_heading">
-                {priceExport}<sup>đ</sup>
-              </h3>
+            <div className="container">
+              <div class="row">
+                <div class="col-8">
+                  <h2>{product.name}</h2>
+                </div>
+                <div class="col">
+                  <h3>( {note} )</h3>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-8">
+                  <div className="price_box">
+                    <h3> {priceExport}<sup>đ</sup></h3>
+                  </div>
+                </div>
+                
+              </div>
+              <div class="row">
+                <div class="col">
+                  <button className={classes.button} onClick={() => this.onAddToCart(product.id)}><i className="fad fa-cart-arrow-down fa-3x" style={{ color: 'rgb(13 49 151)' }}></i></button>
+                </div>
+              </div>
             </div>
           </div>
           <br />
