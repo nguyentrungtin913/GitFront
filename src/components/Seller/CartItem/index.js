@@ -47,38 +47,49 @@ class CartItem extends Component {
     return (
       <div className="col-md-6 col-lg-4">
         <div className={`box ${classes.borderBox}`} >
-          <div className="img-box">
+          <div className="box-img">
             <LazyLoadImage
               className={classes.imageProduct}
               src={`${API_URL}/image/${product.image}`}
               alt="" />
           </div>
           <div className="detail-box">
-            <h2>{product.name}</h2>
-            <div className="price_box">
-              <span className={classes.amount}>
-                <button className={classes.button} onClick={() => this.onDownAmountProduct(product.id, product.amountSell, product.amount)}>
-                  <i className="fas fa-caret-left fa-3x"></i>
-                </button>
-                <h3 style={{ display: 'inline' }}>
-                  {product.amountSell}
-                </h3>
-                <button className={classes.button} onClick={() => this.onUpAmountProduct(product.id, product.amountSell, product.amount)}>
-                  <i className="fas fa-caret-right fa-3x"></i>
-                </button>
-              </span>
-              <button className={classes.button} onClick={() => this.onStepAmountProduct(product.id, product.amountSell, product.amount)}>
-                <i className="fad fa-arrow-to-top fa-3x m-2"></i>
-              </button>
+            <div className="container">
+                <div class="row">
+                  <div class="col">
+                    <h2>{product.name}</h2>
+                  </div>
+                </div>
+                <div class="row" style={{alignItems: 'center'}}>
+                  <div class="col-6">
+                    <div className="price_box">
+                      <h3> {priceExport}<sup>đ</sup></h3>
+                    </div>
+                  </div>
+                  <div className="col">
+                    <div style={{float: 'left', paddingTop: '5px'}}>
+                      <button className={classes.button} onClick={() => this.onDownAmountProduct(product.id, product.amountSell, product.amount)}>
+                        <i className="fas fa-caret-left fa-3x"></i>
+                      </button>
+                      <span style={{ fontSize: '15pt' }}>
+                      &nbsp;{product.amountSell}&nbsp;
+                      </span>
+                      <button className={classes.button} onClick={() => this.onUpAmountProduct(product.id, product.amountSell, product.amount)}>
+                        <i className="fas fa-caret-right fa-3x"></i>
+                      </button>
+                    </div>
+                    <button className={classes.button} onClick={() => this.onStepAmountProduct(product.id, product.amountSell, product.amount)} style={{float: 'right'}}>
+                      <i className="fad fa-arrow-to-top fa-3x m-2"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-8">
+                  <button className={classes.button} onClick={() => this.onCartRemove(product.id)}><i className="fad fa-trash-alt fa-3x m-2" style={{ color: 'rgb(147 0 0)' }}></i></button>
+                  </div>
+                </div>
             </div>
-            <div className="price_box">
-              <h3 className="price_heading">
-                {priceExport}
-              </h3>
-            </div>
-            <button className={classes.button} onClick={() => this.onCartRemove(product.id)}><i className="fad fa-trash-alt fa-3x m-2" style={{ color: 'rgb(147 0 0)' }}></i></button>
           </div>
-          <br />
         </div>
       </div>
     );

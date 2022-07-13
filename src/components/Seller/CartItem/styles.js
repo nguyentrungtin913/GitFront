@@ -15,7 +15,12 @@ const styles = () => ({
     backgroundColor: 'transparent'
   },
   borderBox: {
-    border: 'solid thin #ededed'
+    border: 'solid thin #ededed',
+    borderRadius: '25px',
+    width: '85%',
+    margin: 'auto',
+    backgroundColor: 'white',
+    boxShadow: ' 2px 5px 4px #c4c4c4'
   },
   amount: {
     paddingLeft: '11.5%'
