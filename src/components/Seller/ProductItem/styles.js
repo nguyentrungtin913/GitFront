@@ -19,7 +19,8 @@ const styles = () => ({
     borderRadius: '25px',
     width: '85%',
     margin: 'auto',
-    backgroundColor: 'white'
+    backgroundColor: 'white',
+    boxShadow: ' 2px 5px 4px #c4c4c4'
   }
 });
 
