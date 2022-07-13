@@ -43,11 +43,8 @@ class ProductItem extends Component {
           <div className="detail-box">
             <div className="container">
               <div class="row">
-                <div class="col-8">
-                  <h2>{product.name}</h2>
-                </div>
                 <div class="col">
-                  <h3>( {note} )</h3>
+                  <h2>{product.name}</h2>
                 </div>
               </div>
               <div class="row">
@@ -56,11 +53,13 @@ class ProductItem extends Component {
                     <h3> {priceExport}<sup>đ</sup></h3>
                   </div>
                 </div>
-                
               </div>
               <div class="row">
-                <div class="col">
+                <div class="col-8">
                   <button className={classes.button} onClick={() => this.onAddToCart(product.id)}><i className="fad fa-cart-arrow-down fa-3x" style={{ color: 'rgb(13 49 151)' }}></i></button>
+                </div>
+                <div class="col">
+                    <h3>( {note} )</h3>
                 </div>
               </div>
             </div>
