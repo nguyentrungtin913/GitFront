@@ -55,13 +55,13 @@ class CartItem extends Component {
           </div>
           <div className="detail-box">
             <div className="container">
-                <div class="row">
-                  <div class="col">
+                <div className="row">
+                  <div className="col">
                     <h2>{product.name}</h2>
                   </div>
                 </div>
-                <div class="row" style={{alignItems: 'center'}}>
-                  <div class="col-6">
+                <div className="row" style={{alignItems: 'center'}}>
+                  <div className="col-6">
                     <div className="price_box">
                       <h3> {priceExport}<sup>đ</sup></h3>
                     </div>
@@ -83,8 +83,8 @@ class CartItem extends Component {
                     </button>
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col-8">
+                <div className="row">
+                  <div className="col-8">
                   <button className={classes.button} onClick={() => this.onCartRemove(product.id)}><i className="fad fa-trash-alt fa-3x m-2" style={{ color: 'rgb(147 0 0)' }}></i></button>
                   </div>
                 </div>

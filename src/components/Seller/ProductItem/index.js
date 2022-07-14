@@ -42,23 +42,23 @@ class ProductItem extends Component {
           </div>
           <div className="detail-box">
             <div className="container">
-              <div class="row">
-                <div class="col">
+              <div className="row">
+                <div className="col">
                   <h2>{product.name}</h2>
                 </div>
               </div>
-              <div class="row">
-                <div class="col-8">
+              <div className="row">
+                <div className="col-8">
                   <div className="price_box">
                     <h3> {priceExport}<sup>đ</sup></h3>
                   </div>
                 </div>
               </div>
-              <div class="row">
-                <div class="col-8">
+              <div className="row">
+                <div className="col-8">
                   <button className={classes.button} onClick={() => this.onAddToCart(product.id)}><i className="fad fa-cart-arrow-down fa-3x" style={{ color: 'rgb(13 49 151)' }}></i></button>
                 </div>
-                <div class="col">
+                <div className="col">
                     <h3>( {note} )</h3>
                 </div>
               </div>
